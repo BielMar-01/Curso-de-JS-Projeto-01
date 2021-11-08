@@ -20,6 +20,9 @@ body {
       font-weight: normal;
       margin-bottom: 1rem;
       grid-column: 1 / 4;
+      @media (max-width: 700px) {
+        font-size: 3rem;
+      }
     }
     .animais-lista {
       height: 370px;
@@ -30,36 +33,50 @@ body {
       }
       &::-webkit-scrollbar-thumb {
         background: $color-text-before;
-        border-left: 4px solid $color-text-before;
-        border-right: 4px solid $color-text-before;
+        border-left: 4px solid $bg-primary-color;
+        border-right: 4px solid $bg-primary-color;
       }
       &::-webkit-scrollbar-track {
-        background: $color-text-before;
-        border-left: 4px solid $color-text-before;
+        background: $bg-primary-color;
+      }
+      @media (max-width: 700px) {
+        grid-column: 1;
       }
     }
     .animais-descricao {
-      h2 {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 1rem;
-        color: $color-text-animais;
-        &:before {
-          content: "";
-          display: inline-block;
-          width: 40px;
-          height: 10px;
-          margin-right: 10px;
-          background: $color-text-before;
+      grid-column: 3;
+      section {
+        margin-bottom: 3rem;
+        h2 {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 1rem;
+          color: $color-text-animais;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 10px;
+            margin-right: 10px;
+            background: $color-text-before;
+          }
+        }
+        p {
+          font-family: "Helvetica", "Arial", sans-serif;
+          line-height: 1.2;
+          margin-bottom: 1rem;
         }
       }
-      p {
-        font-family: "Helvetica", "Arial", sans-serif;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-      }
     }
+    @media (max-width: 700px) {
+      grid-column: 1;
+      grid-template-columns: 100px 1fr;
+      grid-gap: 10px;
+    }
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
   }
 }
